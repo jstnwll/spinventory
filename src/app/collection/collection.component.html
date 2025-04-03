@@ -1,0 +1,38 @@
+<section
+  id="collection-container"
+  class="text-neutral-500 rounded-lg pt-36 h-full min-w-xs max-w-6xl"
+>
+  <section
+    id="collection-menu"
+    class="flex justify-between border-neutral-800 border-b pl-5 pr-5 mb-5"
+  >
+    <div class="flex gap-2">
+      <span class="cursor-pointer hover:text-neutral-200">Artists</span>
+      <span class="cursor-pointer hover:text-neutral-200">Albums</span>
+      <span class="cursor-pointer hover:text-neutral-200">Year</span>
+    </div>
+
+    <div class="flex gap-2">
+      <span class="cursor-pointer hover:text-neutral-200">Grid</span>
+      <span class="cursor-pointer hover:text-neutral-200">List</span>
+    </div>
+  </section>
+  <section
+    id="collection-list"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+  >
+    <div
+      *ngFor="let album of albumInterface"
+      class="text-xs flex flex-col items-center pl-5"
+    >
+      <img
+        [src]="album.coverImage"
+        class="size-44 rounded-sm mb-1 text-start"
+      />
+      <p class="text-neutral-200 max-w-42">{{ album.title }}</p>
+      <p class="hover:text-neutral-200 cursor-pointer max-w-42">
+        {{ album.artist }}
+      </p>
+    </div>
+  </section>
+</section>
